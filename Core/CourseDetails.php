@@ -2,6 +2,9 @@
 
 namespace Core;
 
+/**
+ * @codeCoverageIgnore  Nothing to test in controller
+ */
 class CourseDetails extends BaseController
 {
     protected $template = "courseDetails.html.twig";

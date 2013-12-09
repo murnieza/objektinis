@@ -24,6 +24,9 @@ class UserManagement extends BaseController
         }
     }
 
+    /**
+     * @codeCoverageIgnore  Method is written in non testable way
+     */
     public function logout()
     {
         $user = $this->session->getUser();
@@ -33,6 +36,10 @@ class UserManagement extends BaseController
         $this->redirect("/");
     }
 
+
+    /**
+     * @codeCoverageIgnore  Method is written in non testable way
+     */
     public function register()
     {
         $username = isset($_POST['username']) ? $_POST['username'] : "";

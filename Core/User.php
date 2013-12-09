@@ -81,6 +81,10 @@ class User extends BaseModel
         return $this->isLoaded();
     }
 
+
+    /**
+     * @codeCoverageIgnore  Method is written in non testable way
+     */
     public function logOut()
     {
         $this->logedIn = false;
@@ -102,6 +106,9 @@ class User extends BaseModel
         return $count > 0;
     }
 
+    /**
+     * @codeCoverageIgnore  Method is written in non testable way
+     */
     public function create($username, $pass, $pass2)
     {
         $this->triedToRegister = true;
@@ -126,6 +133,9 @@ class User extends BaseModel
         return $this->registrationError;
     }
 
+    /**
+     * @codeCoverageIgnore  Method is written in non testable way
+     */
     public function getMyCourses()
     {
         if ($this->myCourses === null) {

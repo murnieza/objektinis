@@ -33,4 +33,11 @@ class UserTest extends \PHPUnit_Framework_TestCase
             $user->{$getMethodName}()
         );
     }
+
+    public function testLogin()
+    {
+        $user = new User();
+        $this->assertFalse($user->logIn("foo", "bar"));
+        $this->assertTrue($user->logIn("admin", "admin"));
+    }
 }
