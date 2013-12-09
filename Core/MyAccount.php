@@ -15,7 +15,9 @@ class MyAccount extends BaseController
         return parent::render();
     }
 
-
+    /**
+     * @codeCoverageIgnore  Method is written in non testable way
+     */
     public function saveCourse()
     {
         $courseId = isset($_POST['id']) ? $_POST['id'] : null;
@@ -36,6 +38,9 @@ class MyAccount extends BaseController
         }
     }
 
+    /**
+     * @codeCoverageIgnore  Method is written in non testable way
+     */
     public function createCourse()
     {
         $course = new Course();
