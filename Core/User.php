@@ -69,7 +69,7 @@ class User extends BaseModel
     {
         $sql = "SELECT id FROM users WHERE username='?' AND password='?'";
         $id = $this->getDbAdapter()->queryResults($sql, array($username, $password));
-        if(!empty($id)) {
+        if (!empty($id)) {
             $this->load($id[0]['id']);
         }
         return $this->isLoaded();
@@ -126,11 +126,6 @@ class User extends BaseModel
         return $this->registrationError;
     }
 
-    public function isAdmin()
-    {
-        return $this->admin;
-    }
-
     public function getMyCourses()
     {
         if ($this->myCourses === null) {
@@ -138,7 +133,7 @@ class User extends BaseModel
 
             $this->myCourses = new CoursesList();
             $allIds = $fakeCourse->getIdsForUser($this->getId());
-            foreach($allIds as $id) {
+            foreach ($allIds as $id) {
                 $id = $id['courses_id'];
                 $course = clone $fakeCourse;
                 $course->load($id);

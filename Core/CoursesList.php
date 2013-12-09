@@ -13,20 +13,10 @@ class CoursesList extends ObjectsList
     {
         $fakeCourse = new Course();
         $allCoursesIds = $fakeCourse->getAllIds();
-        foreach($allCoursesIds as $id) {
+        foreach ($allCoursesIds as $id) {
             $course = clone $fakeCourse;
             $course->load($id['id']);
             $this->add($course);
-        }
-    }
-
-    /**
-     * @param $user User
-     */
-    public function loadForUser($user)
-    {
-        if ($user->getLoginStatus()) {
-
         }
     }
 }
