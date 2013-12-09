@@ -28,4 +28,3 @@ if (isset($_GET['fn']) && method_exists($view, $_GET['fn'])) {
 }
 
 $view->setTemplateEngine($twig)->render();
-
