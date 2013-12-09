@@ -34,7 +34,7 @@ class MysqlAdapter
 
     private function prepareArguments($arguments = array())
     {
-        foreach($arguments as $key => $argument) {
+        foreach ($arguments as $key => $argument) {
             $argument = mysqli_real_escape_string($this->connection, $argument);
 
             $arguments[$key] = $argument;
@@ -57,7 +57,8 @@ class MysqlAdapter
         return $result;
     }
 
-    public function queryCount($query, $arguments = array()) {
+    public function queryCount($query, $arguments = array())
+    {
         $result = $this->makeQuery($query, $arguments);
         if ($result) {
             return mysqli_num_rows($result);

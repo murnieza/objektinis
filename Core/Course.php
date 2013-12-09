@@ -109,12 +109,14 @@ class Course extends BaseModel
         return $this->getDbAdapter()->queryResults($sql);
     }
 
-    public function getIdsForUser($userId) {
+    public function getIdsForUser($userId)
+    {
         $sql = "SELECT courses_id FROM registrations WHERE users_id=?";
         return $this->getDbAdapter()->queryResults($sql, array($userId));
     }
 
-    public function getUsersIds() {
+    public function getUsersIds()
+    {
         $sql = "SELECT users_id FROM registrations WHERE courses_id=?";
         return $this->getDbAdapter()->queryResults($sql, array($this->getId()));
     }
@@ -132,8 +134,7 @@ class Course extends BaseModel
         $price,
         $freeSlots,
         $totalSlots
-    )
-    {
+    ) {
         $sql = "
             UPDATE `courses`
             SET
@@ -167,8 +168,7 @@ class Course extends BaseModel
         $price,
         $freeSlots,
         $totalSlots
-    )
-    {
+    ) {
         $sql = "
             INSERT INTO `courses`
             SET
