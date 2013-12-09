@@ -1,0 +1,177 @@
+body {
+    background-color: #e2e09b;
+    font: 13px/1.231 arial, helvetica, clean, sans-serif;
+}
+
+a {
+    color: #2992ff;
+}
+
+a:hover {
+    text-decoration: none;
+    background-color: #e2e09b;
+}
+
+div {
+    border: 0.1px solid;
+    padding: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+input {
+    width: 100px;
+    background-color: #e2e09b;
+}
+
+span {
+    float: left;
+    width: 80px;
+}
+
+p {
+    margin: 3px 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+input[type="submit"] {
+    float: none;
+    display: block;
+    margin : 0 auto;
+}
+
+#page {
+    width: 1000px;
+    background-color: #d5dbd7;
+    margin: auto;
+    min-height: 600px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-top: none;
+    padding: 15px;
+    overflow: hidden;
+}
+
+#header {
+    position: relative;
+    padding: 0;
+    margin: -15px -15px 0 -15px;
+    text-align: center;
+    border: none;
+
+}
+
+#navigation {
+    width: 22%;
+    float: left;
+    min-height: 500px;
+    border-style: none;
+    padding: 0;
+}
+
+#navigation > div {
+    margin : 0 0 10px 0;
+}
+
+#content {
+    width: 75%;
+    float: right;
+    border-style:solid;
+    min-height: 500px
+}
+
+.clear {
+    clear: both;
+}
+
+span.registration {
+    width:150px;
+    text-align:right;
+}
+
+input.registration {
+    width:400px;
+    margin: 0 0 0 -100px;
+}
+
+.error {
+    background-color: #cd6e78 !important;
+}
+
+.error-message {
+    float: right;
+    margin: 0 0 0 10px;
+    position: absolute;
+    text-align: left;
+    width: 140px;
+}
+
+.detailed {
+    min-height: 150px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.details {
+    text-align: left;
+}
+
+.details > span {
+    float: none;
+    font: 14px italic;
+}
+
+.detailed .description {
+    text-align: justify;
+}
+
+.accordion {
+    padding: 0;
+    list-style: none;
+}
+
+.accordion ol {
+    display: none;
+}
+
+.tab {
+    cursor: pointer;
+}
+.accordion input {
+    width: 400px;
+    margin-left: -100px;
+}
+
+.accordion input[type=submit] {
+    width: 100px;
+    margin: 0 auto;
+}
+
+.accordion textarea {
+    background-color: #e2e09b;
+    min-height: 150px;
+    width: 400px;
+    margin-left: -100px;
+}
+
+.visible {
+    display: block;
+}
+
+.invisible {
+    display: none;
+}
+
+div.form {
+    border: none;
+}
+
+li > div {
+    margin-top: 5px;
+}
+
+.accordion span {
+    width:85px;
+    text-align:right;
+}

@@ -1,0 +1,59 @@
+{% if course is defined %}
+    <div>
+        <p class="heading">{{ course.getTitle() }}</p>
+        <div class="form invisible">
+            <hr/>
+            <form action="?cl=MyAccount&fn=saveCourse" method="post" class="editCourse">
+                <input type="hidden" name="id" value="{{ course.getId() }}" />
+                <p><span>Title:</span><input name="title"  value="{{ course.getTitle() }}" />
+                    <span class="error-message"></span>
+                </p>
+                <p><span>Starting date:</span><input name="date"  value="{{ course.getDate() }}" />
+                    <span class="error-message"></span>
+                </p>
+                <p><span>Price:</span><input name="price"  value="{{ course.getPrice() }}" />
+                    <span class="error-message"></span>
+                </p>
+                <p><span>Free slots:</span><input name="freeSlots"  value="{{ course.getFreeSlots() }}" />
+                    <span class="error-message"></span>
+                </p>
+                <p><span>Total slots:</span><input name="totalSlots"  value="{{ course.getTotalSlots }}" />
+                    <span class="error-message"></span>
+                </p>
+                <p><span>Description:</span><textarea name="description">{{ course.getDescription() }}</textarea>
+                    <span class="error-message"></span>
+                </p>
+                <p><input type="submit" value="Save"/></p>
+            </form>
+        </div>
+    </div>
+{% else %}
+    <div>
+        <p class="heading">Create new course</p>
+        <div class="form">
+            <hr/>
+            <form action="?cl=MyAccount&fn=createCourse" method="post" class="editCourse">
+                <p><span>Title:</span><input name="title"/>
+                    <span class="error-message"></span>
+                </p>
+                <p><span>Starting date:</span><input name="date"/>
+                    <span class="error-message"></span>
+                </p>
+                <p><span>Price:</span><input name="price"/>
+                    <span class="error-message"></span>
+                </p>
+                <p><span>Free slots:</span><input name="freeSlots"/>
+                    <span class="error-message"></span>
+                </p>
+                <p><span>Total slots:</span><input name="totalSlots"/>
+                    <span class="error-message"></span>
+                </p>
+                <p><span>Description:</span><textarea name="description"></textarea>
+                    <span class="error-message"></span>
+                </p>
+                <p><input type="submit" value="Create"/></p>
+            </form>
+        </div>
+    </div>
+    
+{% endif %}

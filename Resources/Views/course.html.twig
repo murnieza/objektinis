@@ -1,0 +1,57 @@
+{% if layout == "minimal" %}
+    <a href="{{ course.getLink() }}">{{ course.getTitle() }}</a>
+{% elseif layout == "detailed" %}
+    <div class="detailed">
+        <h2>
+            <a href="{{ course.getLink() }}">{{ course.getTitle() }}</a>
+        </h2>
+        <p class="details">
+            <span><b>Date:</b> {{ course.getDate() }}</span>
+            <span><b>Price:</b> {{ course.getPrice() }} LTL</span>
+            <span><b>Slots left:</b> {{ course.getFreeSlots() }}/{{ course.getTotalSlots }}</span>
+        </p>
+        <p class="description">
+            {{ course.getDescription() }}
+        </p>
+    </div>
+{% else %}
+    {% if course.isLoaded() %}
+        <div class="detailed">
+            <h2>
+                <a href="{{ course.getLink() }}">{{ course.getTitle() }}</a>
+            </h2>
+            <p class="details">
+                <span><b>Date:</b> {{ course.getDate() }}</span>
+                <span><b>Price:</b> {{ course.getPrice() }} LTL</span>
+                <span><b>Slots left:</b> {{ course.getFreeSlots() }}/{{ course.getTotalSlots }}</span>
+            </p>
+            <p class="description">
+                {{ course.getDescription() }}
+            </p>
+            <hr />
+            {% if user.getLoginStatus() %}
+                {% if user.isRegisteredOnCourse(course.getId()) %}
+                    You are already registered for this course
+                {% elseif course.getFreeSlots() > 0  %}
+                    <a href="?cl=CourseDetails&fn=addUser&id={{ course.getId() }}">Register for course</a>
+                {% else %}
+                    Sorry, no slots left, for this course.
+                {% endif %}
+            {% else %}
+                To register for course, you have to register on the system.
+            {% endif %}
+        </div>
+        {% if user.isAdmin() %}
+            <div>
+                <h2>People who registered for this course</h2>
+                <ol>
+                    {% for user in registeredUsers %}
+                        <li>{{ user.getUsername() }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        {% endif %}
+    {%  else %}
+        Course not found.
+    {%  endif %}
+{% endif %}

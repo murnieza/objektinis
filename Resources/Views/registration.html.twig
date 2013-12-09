@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    {% if user.getLoginStatus() == false %}
+        {% if registrationError is defined %}
+            {% if registrationError == 1 %}
+                <p><b>Unknown error</b></p>
+            {% elseif registrationError == 2 %}
+                <p><b>User already exists</b></p>
+            {% elseif registrationError == 3 %}
+                <p><b>Passwords do not match</b></p>
+            {% elseif registrationError == 4 %}
+                <p><b>Some of fields left blank</b></p>
+            {% endif %}
+
+            {% if registrationError != 0 %}
+                {{ block('registrationForm') }}
+            {% else %}
+                Registered successfuly. Now you can login.
+            {% endif %}
+        {% else %}
+            {{ block('registrationForm') }}
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block registrationForm %}
+    <form action="?cl=UserManagement&amp;fn=register" method="post" id="registration-form">
+        <p>
+            <span class="registration">Username:</span>
+            <input class="registration" name="username" />
+            <span class="error-message"></span>
+        </p>
+        <p>
+            <span class="registration">Password:</span>
+            <input class="registration" name="password" type="password" />
+            <span class="error-message"></span>
+        </p>
+        <p>
+            <span class="registration">Repeat password:</span>
+            <input class="registration" name="password2" type="password"/>
+            <span class="error-message"></span>
+        </p>
+        <input type="submit" value="Register" />
+    </form>
+{% endblock %}

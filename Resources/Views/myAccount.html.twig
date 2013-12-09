@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <h1>My account</h1>
+    <ul class="accordion">
+    {% if user.getLoginStatus() %}
+        {% if user.isAdmin() %}
+            <li id="adminCourses"">
+                <div class="tab">Courses administration</div>
+                <ol>
+                    {% for course in allCourses %}
+                        <li>
+                            {{ include ("editCourse.html.twig", {"course": course}) }}
+                        </li>
+                    {% endfor %}
+                        <li>
+                            {{ include ("editCourse.html.twig") }}
+                        </li>
+                </ol>
+            </li>
+        {% endif %}
+            <li id="myCourses">
+                <div class="tab">My courses</div>
+                <ol>
+                    {% for course in myCourses %}
+                        <li>{{ course.getTitle() }}</li>
+                    {% endfor %}
+                </ol>
+            </li>
+        </ul>
+    {% else %}
+        Please register or login.
+    {% endif %}
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript" src="Resources/JS/accordion.js"></script>
+{% endblock %}

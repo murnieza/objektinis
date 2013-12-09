@@ -1,0 +1,8 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <h1>Newest courses</h1>
+    {% for course in allCourses|slice(0, 3) %}
+        {{ include ('course.html.twig', {"layout": "detailed", "course": course}) }}
+    {% endfor %}
+{% endblock %}
