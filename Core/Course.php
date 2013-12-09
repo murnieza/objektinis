@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class Course extends BaseModel
 {
     protected $id;

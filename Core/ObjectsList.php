@@ -1,6 +1,9 @@
 <?php
 
-class ObjectsList implements Iterator {
+namespace Core;
+
+class ObjectsList implements \Iterator
+{
     protected $container = array();
 
     protected $pointer = 0;

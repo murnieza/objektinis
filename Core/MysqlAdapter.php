@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class MysqlAdapter
 {
     protected $host = "localhost";

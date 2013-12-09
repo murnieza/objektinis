@@ -41,7 +41,7 @@
                 To register for course, you have to register on the system.
             {% endif %}
         </div>
-        {% if user.isAdmin() %}
+        {% if user.getAdmin() %}
             <div>
                 <h2>People who registered for this course</h2>
                 <ol>

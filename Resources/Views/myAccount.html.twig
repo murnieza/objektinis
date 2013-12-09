@@ -4,7 +4,7 @@
     <h1>My account</h1>
     <ul class="accordion">
     {% if user.getLoginStatus() %}
-        {% if user.isAdmin() %}
+        {% if user.getAdmin() %}
             <li id="adminCourses"">
                 <div class="tab">Courses administration</div>
                 <ol>
