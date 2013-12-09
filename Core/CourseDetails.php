@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class CourseDetails extends BaseController
 {
     protected $template = "courseDetails.html.twig";

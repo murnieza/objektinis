@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class UserManagement extends BaseController
 {
     protected $template = "registration.html.twig";

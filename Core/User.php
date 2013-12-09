@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class User extends BaseModel
 {
     const ERROR_OK = 0;

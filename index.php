@@ -17,11 +17,13 @@ $twig->addExtension(new Twig_Extension_Debug());
 
 $view = null;
 
-if (isset($_GET['cl']) && class_exists($_GET['cl'])) {
-    $view = new $_GET['cl']();
+if (isset($_GET['cl']) && class_exists("Core\\" . $_GET['cl'])) {
+    $viewName = "Core\\" . $_GET['cl'];
 } else {
-    $view = new FrontPage();
+    $viewName = "Core\\FrontPage";
 }
+
+$view = new $viewName();
 
 if (isset($_GET['fn']) && method_exists($view, $_GET['fn'])) {
     $view->{$_GET['fn']}();

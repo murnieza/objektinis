@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class CoursesList extends ObjectsList
 {
     public function __construct()

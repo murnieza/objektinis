@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class UsersList extends ObjectsList
 {
     public function __construct()

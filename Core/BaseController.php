@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class BaseController
 {
     protected $template = "base.html.twig";

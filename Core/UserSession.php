@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class UserSession
 {
     private $session = null;

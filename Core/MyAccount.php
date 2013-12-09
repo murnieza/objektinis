@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class MyAccount extends BaseController
 {
     protected $template = "myAccount.html.twig";
