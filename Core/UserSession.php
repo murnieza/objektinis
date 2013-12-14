@@ -2,7 +2,7 @@
 
 namespace Core;
 
-class UserSession
+class UserSession extends AbstractSession
 {
     private $session = null;
 
@@ -16,14 +16,13 @@ class UserSession
         $this->session[$name] = $value;
     }
 
-    public function getUser()
+    public function getVariable($name)
     {
-        if (isset($this->session['userName']) && isset($this->session['password'])) {
-            $this->session['user'] = new User();
-            $this->session['user']->logIn($this->session['userName'], $this->session['password']);
-            return $this->session['user'];
-        }
+        return $this->session[$name];
+    }
 
-        return null;
+    public function isVariableSet($name)
+    {
+        return isset($this->session[$name]);
     }
 }
