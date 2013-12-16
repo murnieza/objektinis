@@ -29,6 +29,16 @@ class BaseController implements ControllerInterface
         return $this;
     }
 
+    public function getTemplateArgs()
+    {
+        return $this->tplArguments;
+    }
+
+    public function getTemplate()
+    {
+        return $this->template;
+    }
+
     public function getTemplateEngine()
     {
         return $this->templateEngine;
@@ -41,13 +51,6 @@ class BaseController implements ControllerInterface
         $coursesList = new CoursesList();
         $coursesList->loadAll();
         $this->tplArguments['allCourses'] = $coursesList;
-
-        if ($this->template !== null) {
-            echo $this->getTemplateEngine()->render(
-                $this->template,
-                $this->tplArguments
-            );
-        }
     }
 
     public function redirect($location)
