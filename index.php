@@ -29,7 +29,7 @@ if (isset($_GET['fn']) && method_exists($view, $_GET['fn'])) {
     $view->{$_GET['fn']}();
 }
 
-$controllerOutput = $view->setTemplateEngine($twig)->render();
+$controllerOutput = $view->render();
 
 $renderer = new \Core\Renderer($twig);
 

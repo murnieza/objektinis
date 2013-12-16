@@ -11,7 +11,7 @@ class Renderer
         $this->engine = $engine;
     }
 
-    public function render($controller)
+    public function render(BaseController $controller)
     {
         return $this->engine->render(
             $controller->getTemplate(),
