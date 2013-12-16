@@ -2,7 +2,7 @@
 
 namespace Core;
 
-class UserManagement extends BaseController
+class UserManagement extends BaseController implements ControllerInterface
 {
     protected $template = "registration.html.twig";
 

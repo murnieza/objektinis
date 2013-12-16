@@ -5,7 +5,7 @@ namespace Core;
 /**
  * @codeCoverageIgnore  Nothing to test in controller
  */
-class CourseDetails extends BaseController
+class CourseDetails extends BaseController implements ControllerInterface
 {
     protected $template = "courseDetails.html.twig";
 

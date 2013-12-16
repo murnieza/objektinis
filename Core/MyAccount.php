@@ -2,7 +2,7 @@
 
 namespace Core;
 
-class MyAccount extends BaseController
+class MyAccount extends BaseController implements ControllerInterface
 {
     protected $template = "myAccount.html.twig";
 

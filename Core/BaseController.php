@@ -2,7 +2,7 @@
 
 namespace Core;
 
-class BaseController
+class BaseController implements ControllerInterface
 {
     protected $template = "base.html.twig";
 
