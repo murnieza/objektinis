@@ -20,7 +20,7 @@ class MysqlAdapter
         return self::$instance;
     }
 
-    public function __construct()
+    private function __construct()
     {
         $link = mysqli_connect($this->host, $this->user, $this->pass);
         if (!$link) {
