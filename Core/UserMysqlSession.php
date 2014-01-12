@@ -2,7 +2,7 @@
 
 namespace Core;
 
-class UserMysqlSession extends AbstractSession
+class UserMysqlSession extends AbstractSession implements SessionInterface
 {
     /** @var \Core\MysqlAdapter|null */
     protected $adapter = null;

@@ -2,7 +2,7 @@
 
 namespace Core;
 
-abstract class AbstractSession
+abstract class AbstractSession implements SessionInterface
 {
     abstract public function getVariable($key);
     abstract public function setVariable($key, $value);

@@ -2,7 +2,7 @@
 
 namespace Core;
 
-class UserSession extends AbstractSession
+class UserSession extends AbstractSession implements SessionInterface
 {
     private $session = null;
 
